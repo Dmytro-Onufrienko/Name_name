@@ -1,14 +1,16 @@
+import classes from './Nav.module.css'
+
 const Nav = () => {
     return (
-        <nav className='app-nav'>
-            <div>
-                <a href="#s" className={'link-line'}>Profile</a>
+        <nav className={classes.nav}>
+            <div className={classes.item}>
+                <a href="#s" className={classes.link_line}>Profile</a>
             </div>
-            <div>
-                <a href="#s" className={'link-line'}>Messages</a>
+            <div className={classes.item}>
+                <a href="#s" className={classes.link_line}>Messages</a>
             </div>
-            <div>
-                <a href="#s" className={'link-line'}>Third</a>
+            <div className={classes.item}>
+                <a href="#s" className={classes.link_line}>Third</a>
             </div>
         </nav>
     )

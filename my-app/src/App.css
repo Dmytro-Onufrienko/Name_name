@@ -1,70 +1,15 @@
-/*.App-header {*/
-/*  background-color: #282c34;*/
-/*  min-height: 100vh;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  font-size: calc(10px + 2vmin);*/
-/*  color: white;*/
-/*}*/
-* {
-  background-color: #282c34;
+.parent {
+    background-image: url("https://wallpaperaccess.com/full/1372684.jpg");
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 .app-wrapper {
-  margin: 0 auto;
-  display: grid;
-  width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    width: 990px;
 
-  grid-template-areas: "h h" "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  /*grid-gap: 10px*/
-}
-
-.app-header {
-  grid-area: h;
-  background-color: darkmagenta;
-}
-
-#logo {
-  width: 50px;
-  border-radius: 10px;
-}
-
-#top-img {
-  height: 70vh;
-  border-radius: 10px;
-}
-
-.app-nav {
-  grid-area: n;
-  background-color: blueviolet;
-}
-
-.app-content {
-  grid-area: c;
-  background-color: darkorchid;
-}
-
-#ava {
-  width: 200px;
-  height: 200px;
-}
-
-.line {
-  text-align: center;
-  border-radius: 15px;
-  width: 150px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: magenta;
-}
-
-.link-line {
-  border-radius: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: magenta;
+    grid-template-areas: "h h" "n c";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
 }
