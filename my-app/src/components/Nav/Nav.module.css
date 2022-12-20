@@ -3,9 +3,10 @@
     background-color: blueviolet;
     border: 2px solid;
     border-radius: 30px;
-    height: 150px;
+    height: 250px;
     padding: 20px;
     margin-top: 25px;
+    width: 120px;
 }
 
 .item {

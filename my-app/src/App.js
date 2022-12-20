@@ -1,7 +1,7 @@
 import './App.css';
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Profile from "./components/Profile";
+import Header from "./components/Header/Header";
+import Nav from "./components/Nav/Nav";
+import Discussion from "./components/Profile/Discussion";
 
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
             <div className='app-wrapper'>
                 <Header/>
                 <Nav/>
-                <Profile/>
+                <Discussion/>
             </div>
         </div>
     );
