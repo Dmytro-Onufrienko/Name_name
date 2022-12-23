@@ -1,5 +1,5 @@
 import classes from './Discussion.module.css'
-import Theme from "./My posts/Theme";
+import Theme from "./Theme/Theme";
 
 const Discussion = () => {
     return (

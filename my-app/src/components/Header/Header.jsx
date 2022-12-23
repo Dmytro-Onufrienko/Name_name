@@ -4,8 +4,9 @@ const Header = () => {
     return (
         <header className={classes.header}>
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"
-                id={classes.logo}/>
+                src={process.env.PUBLIC_URL + 'icons/favicon_Ukraine.png'}
+                id={classes.logo}
+                alt='logo'/>
         </header>
     )
 }

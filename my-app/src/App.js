@@ -1,7 +1,7 @@
 import './App.css';
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
-import Discussion from "./components/Profile/Discussion";
+import Discussion from "./components/Discussions/Discussion";
 import Messages from "./components/Messages/Messages";
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import React from "react";

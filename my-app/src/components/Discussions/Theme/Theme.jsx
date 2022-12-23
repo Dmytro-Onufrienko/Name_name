@@ -1,5 +1,5 @@
 import classes from './Theme.module.css'
-import Comment from "./Post/Comment";
+import Comment from "./Comment/Comment";
 
 const Theme = () => {
     return (
