@@ -7,6 +7,7 @@
 }
 
 .line {
+    grid-area: text;
     align-self: end;
     justify-self: start;
     text-align: center;
@@ -25,6 +26,7 @@
     width: 70px;
     height: 70px;
     margin: 0;
+    border: 1px solid magenta;
     border-radius: 100px;
     justify-self: end;
 }

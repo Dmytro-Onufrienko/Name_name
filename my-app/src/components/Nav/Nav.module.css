@@ -17,5 +17,13 @@
     border-radius: 15px;
     padding: 0 15px;
     background-color: blueviolet;
+    text-decoration: none;
 }
 
+.active {
+    border-radius: 15px;
+    padding: 0 15px;
+    color: blue;
+    background-color: blueviolet;
+    text-decoration: none;
+}
