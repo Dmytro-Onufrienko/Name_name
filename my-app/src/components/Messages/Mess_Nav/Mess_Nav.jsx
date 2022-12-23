@@ -1,10 +1,13 @@
 import classes from "./Mess_Nav.module.css"
+import {NavLink} from "react-router-dom";
 
 const Mess_Nav = (props) => {
     return (
         <div>
-            <img className={classes.user_ava} src={`${props.img}`}
-                alt="ava"/>
+            <NavLink to={`/messages/${props.name}`}>
+                <img className={classes.user_ava} src={`${props.img}`}
+                     alt="ava"/>
+            </NavLink>
         </div>
     )
 }

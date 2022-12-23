@@ -8,7 +8,9 @@ const Messages = () => {
             <div className={classes.mess_ava}>
                 <Mess_Nav
                     img={process.env.PUBLIC_URL + 'avatars/sadboy_avatar.png'}
+                    name={'sadboy'}
                 />
+
                 <Mess_Nav
                     img={process.env.PUBLIC_URL + 'avatars/sadgirl_avatar.jpg'}
                 />
