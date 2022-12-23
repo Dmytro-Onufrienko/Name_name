@@ -10,7 +10,7 @@ const Nav = () => {
                 <a href="my-app/src/components#s" className={classes.link_line}>Messages</a>
             </div>
             <div className={classes.item}>
-                <a href="my-app/src/components#s" className={classes.link_line}>Third</a>
+                <a href="my-app/src/components#s" className={classes.link_line}>Discussions</a>
             </div>
         </nav>
     )

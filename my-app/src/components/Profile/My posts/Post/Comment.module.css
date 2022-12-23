@@ -7,7 +7,6 @@
 }
 
 .line {
-    grid-area: text;
     align-self: end;
     justify-self: start;
     text-align: center;

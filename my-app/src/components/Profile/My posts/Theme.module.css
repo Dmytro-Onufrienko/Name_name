@@ -10,13 +10,12 @@
 }
 
 .line {
+    grid-area: line;
     text-align: center;
     border: 1px solid;
     border-radius: 15px;
-    width: 50px;
-    min-width: 150px;
-    max-width: 400px;
-    margin: 0;
+    width: 500px;
+    margin: auto;
     background-color: magenta;
 }
 
