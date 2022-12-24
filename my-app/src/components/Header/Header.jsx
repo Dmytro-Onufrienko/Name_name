@@ -1,12 +1,17 @@
 import classes from './Header.module.css'
+import Logo from "./Logo";
+import Button from "./Button";
 
 const Header = () => {
     return (
         <header className={classes.header}>
-            <img
-                src={process.env.PUBLIC_URL + 'icons/favicon_Ukraine.png'}
-                id={classes.logo}
-                alt='logo'/>
+            <Logo/>
+            <div className={classes.buttons}>
+                <Button name={'Social'} path={'messages'}/>
+                <Button name={'Anime'} path={'anime'}/>
+                <Button name={'Music'} path={'music'}/>
+            </div>
+
         </header>
     )
 }
