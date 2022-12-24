@@ -1,10 +1,9 @@
-import classes from './Discussion.module.css'
 import Theme from "./Theme/Theme";
 
-const Discussion = () => {
+const Discussion = (props) => {
     return (
         <div>
-            <Theme/>
+            <Theme discussion_theme={props.discussion_theme} comments_data={props.comments_data}/>
         </div>
     )
 }
