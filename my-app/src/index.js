@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from "./redux/state";
+import state, {add_comment} from "./redux/state";
 
 
 
@@ -14,6 +14,7 @@ root.render(
         users={state.users}
         discussion_theme={state.discussion_theme}
         comments_data={state.comments_data}
+        ad_comment={add_comment}
     />
   </React.StrictMode>
 );

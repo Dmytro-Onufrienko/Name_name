@@ -18,8 +18,11 @@ const App = (props) => {
                     <div className={'app-content-wrapper'}>
                         <Routes>
                             <Route path={'/messages'} element={<Messages users={props.users}/>}/>
-                            <Route path={'/discussions'} element={<Discussion discussion_theme={props.discussion_theme}
-                                                                              comments_data={props.comments_data}/>}/>
+                            <Route path={'/discussions'} element={<Discussion
+                                discussion_theme={props.discussion_theme}
+                                comments_data={props.comments_data}/>}
+                                add_comment={props.add_comment}
+                            />
                             <Route path={'/anime'} element={<Anime/>}/>
                             <Route path={'/music'} element={<Music/>}/>
                         </Routes>

@@ -14,7 +14,11 @@ const Theme = (props) => {
                     <p className={classes.line}>{props.discussion_theme[0].text}</p>
                 </div>
             </div>
-            <Comments comments_data={props.comments_data}/>
+            <Comments
+                discussion_theme={props.discussion_theme}
+                comments_data={props.comments_data}
+                add_comment={props.add_comment}
+            />
         </div>
     )
 }
