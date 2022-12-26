@@ -17,12 +17,14 @@ const App = (props) => {
                 <div className={'app-content-wrapper'}>
                     <Routes>
                         <Route path={'/messages'}
-                               element={<Messages users={props.users}/>}
+                               element={<Messages users={props.state.users}/>}
                         />
                         <Route path={'/discussions'}
                                element={<Discussion
-                                   discussion_theme={props.discussion_theme}
-                                   comments_data={props.comments_data}
+                                   discussion_theme={props.state.discussion_theme}
+                                   comments_data={props.state.comments_data}
+                                   new_post_text={props.state.new_post_text}
+                                   update_post_text={props.update_post_text}
                                    add_comment={props.add_comment}
                                />}
                         />
