@@ -1,4 +1,6 @@
-import {render_entire_tree} from "./render";
+let render_entire_tree = () => {
+
+}
 
 let state = {
     users: [
@@ -27,8 +29,8 @@ let state = {
 window.state = state
 
 
-export let add_comment = (postMessage) => {
-    let new_comment = {
+export const add_comment = (postMessage) => {
+    const new_comment = {
         "id": state.comments_data.length+1,
         "discussions_id": postMessage.discussion_id,
         "name": postMessage.creator_name,
@@ -42,9 +44,14 @@ export let add_comment = (postMessage) => {
 }
 
 
-export let update_post_text = (text) => {
+export const update_post_text = (text) => {
     state.new_post_text = text
     render_entire_tree(state)
+}
+
+
+export const subscriber = (observer) => {
+    render_entire_tree = observer
 }
 
 
