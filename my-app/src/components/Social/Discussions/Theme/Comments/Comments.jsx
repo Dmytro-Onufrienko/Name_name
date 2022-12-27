@@ -11,8 +11,8 @@ const Comments = (props) => {
             <p className={classes.line}>Comments</p>
             <Add_comment
                 discussion_theme={props.discussion_theme}
-                new_post_text={props.new_post_text}
-                update_post_text={props.update_post_text}
+                placeholder={props.placeholder}
+                update_textarea={props.update_textarea}
                 add_comment={props.add_comment}
             />
             <div>

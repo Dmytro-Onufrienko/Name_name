@@ -5,6 +5,7 @@ let store = {
             {"id": 2, "name": "sadgirl", "img": 'avatars/sadgirl_avatar.jpg'},
             {"id": 3, "name": "girl2", "img": 'avatars/girl2.jpg'},
             {"id": 4, "name": "girl3", "img": 'avatars/girl3.jpg'},
+            {"id": 5, "name": "Zen", "img": 'avatars/cyber_girl.jpg'},
         ],
         discussion_theme: [
             {
@@ -17,10 +18,13 @@ let store = {
             {"id": 3, "discussion_id": 1, "name": "girl2", "img": 'avatars/girl2.jpg', "text": 'Episode 10 was a lil bit boring :('},
             {"id": 4, "discussion_id": 1, "name": "girl3", "img": 'avatars/girl3.jpg', "text": 'Episode 11 is out now!!!!! im so exited! Wanna watch it now!!'},
         ],
-        new_post_text: 'Type here...',
+        placeholder: 'Type here...',
     },
     getState() {
         return this._state
+    },
+    currentUser() {
+        return this._state.users[4]
     },
     _render_entire_tree() {
         console.log('State is changed')
@@ -38,13 +42,14 @@ let store = {
         console.log(this._state)
         this._render_entire_tree(this._state)
     },
-    update_post_text (text) {
-        this._state.new_post_text = text
+    update_textarea (text) {
+        this._state.placeholder = text
         this._render_entire_tree(this._state)
     },
     subscriber (observer) {
         this._render_entire_tree = observer
     },
+
 }
 
 

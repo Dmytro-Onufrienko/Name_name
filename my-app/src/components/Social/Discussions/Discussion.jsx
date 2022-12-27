@@ -6,8 +6,8 @@ const Discussion = (props) => {
             <Theme
                 discussion_theme={props.discussion_theme}
                 comments_data={props.comments_data}
-                new_post_text={props.new_post_text}
-                update_post_text={props.update_post_text}
+                placeholder={props.placeholder}
+                update_textarea={props.update_textarea}
                 add_comment={props.add_comment}
             />
         </div>

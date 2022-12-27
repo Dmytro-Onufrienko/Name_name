@@ -14,14 +14,14 @@ const Add_comment = (props) => {
             "text": text,
         };
         props.add_comment(comment_data)
-        console.log(props.new_post_text)
+        console.log(props.placeholder)
         textarea_change('Type here...')
     };
 
 
     let textarea_change = (base) => {
         let text = base ? base : new_post.current.value
-        props.update_post_text(text)
+        props.update_textarea(text)
     }
 
 
@@ -29,7 +29,7 @@ const Add_comment = (props) => {
         <div className={classes.add_comment}>
             <textarea ref={new_post}
                       onChange={() => textarea_change()}
-                      value={props.new_post_text}
+                      value={props.placeholder}
                       className={classes.text_area}/>
             <img className={classes.user_ava}
                  src={`${props.discussion_theme[0].user_ava}`}
