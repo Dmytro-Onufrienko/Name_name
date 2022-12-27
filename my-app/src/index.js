@@ -1,28 +1,28 @@
 import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import state, {add_comment, subscriber, update_post_text} from "./redux/state";
+import store from "./redux/state";
 import ReactDOM from "react-dom/client";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-export let render_entire_tree = (state) => {
+let render_entire_tree = (state) => {
     root.render(
         <BrowserRouter>
             <App
                 state={state}
-                update_post_text={update_post_text}
-                add_comment={add_comment}
+                update_post_text={store.update_post_text.bind(store)}
+                add_comment={store.add_comment.bind(store)}
             />
         </BrowserRouter>
     );
 }
 
-render_entire_tree(state)
+render_entire_tree(store.getState())
 
-subscriber(render_entire_tree)
+store.subscriber(render_entire_tree)
 
 
 // If you want to start measuring performance in your app, pass a function
