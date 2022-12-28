@@ -12,8 +12,7 @@ const Comments = (props) => {
             <Add_comment
                 discussion_theme={props.discussion_theme}
                 placeholder={props.placeholder}
-                update_textarea={props.update_textarea}
-                add_comment={props.add_comment}
+                dispatch={props.dispatch}
             />
             <div>
                 {comments}

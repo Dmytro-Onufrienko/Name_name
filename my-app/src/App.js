@@ -18,9 +18,8 @@ const App = (props) => {
                     <Routes>
                         <Route path={'/messages'}
                                element={<Messages users={props.state.users}
-                                                  current_user={props.current_user}
+                                                  dispatch={props.dispatch}
                                                   placeholder={props.state.placeholder}
-                                                  update_textarea={props.update_textarea}
                                />}
                         />
                         <Route path={'/discussions'}
@@ -28,8 +27,7 @@ const App = (props) => {
                                    discussion_theme={props.state.discussion_theme}
                                    comments_data={props.state.comments_data}
                                    placeholder={props.state.placeholder}
-                                   update_textarea={props.update_textarea}
-                                   add_comment={props.add_comment}
+                                   dispatch={props.dispatch}
                                />}
                         />
                         <Route path={'/anime'}

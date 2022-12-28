@@ -2,6 +2,7 @@ import classes from "./Comments.module.css";
 import React from "react";
 
 const Add_comment = (props) => {
+    let current_user = props.dispatch({type: "CURRENT-USER"})
     let new_post = React.createRef();
 
 
@@ -13,7 +14,7 @@ const Add_comment = (props) => {
             "creator_name": props.discussion_theme[0].creator_name,
             "text": text,
         };
-        props.add_comment(comment_data)
+        props.dispatch({type: "ADD-COMMENT", obj: comment_data})
         console.log(props.placeholder)
         textarea_change('Type here...')
     };
@@ -21,7 +22,7 @@ const Add_comment = (props) => {
 
     let textarea_change = (base) => {
         let text = base ? base : new_post.current.value
-        props.update_textarea(text)
+        props.dispatch({type: "UPDATE-TEXTAREA", text: text})
     }
 
 
@@ -32,7 +33,7 @@ const Add_comment = (props) => {
                       value={props.placeholder}
                       className={classes.text_area}/>
             <img className={classes.user_ava}
-                 src={`${props.discussion_theme[0].user_ava}`}
+                 src={current_user.img}
                  alt="avatar"/>
             <button onClick={() => add_post()}
                     className={classes.button}>

@@ -13,9 +13,7 @@ let render_entire_tree = (state) => {
         <BrowserRouter>
             <App
                 state={state}
-                update_textarea={store.update_textarea.bind(store)}
-                add_comment={store.add_comment.bind(store)}
-                current_user={store.currentUser.bind(store)}
+                dispatch={store.dispatch.bind(store)}
             />
         </BrowserRouter>
     );

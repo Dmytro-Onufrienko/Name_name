@@ -18,8 +18,7 @@ const Theme = (props) => {
                 discussion_theme={props.discussion_theme}
                 comments_data={props.comments_data}
                 placeholder={props.placeholder}
-                update_textarea={props.update_textarea}
-                add_comment={props.add_comment}
+                dispatch={props.dispatch}
             />
         </div>
     )

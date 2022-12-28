@@ -14,8 +14,9 @@ const Messages = (props) => {
             <div className={classes.dialog}>
                 <Dialog users={props.users}
                         placeholder={props.placeholder}
-                        update_textarea={props.update_textarea}
-                        current_user={props.current_user}/>
+                        dispatch={props.dispatch}
+                />
+
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import classes from './Dialog.module.css'
 import React from "react";
 
 const Dialog = (props) => {
-    let current_user = props.current_user()
+    let current_user = props.dispatch({type: "CURRENT-USER"})
     let new_message = React.createRef();
 
 
@@ -15,7 +15,7 @@ const Dialog = (props) => {
 
     let textarea_change = (base) => {
         let text = base ? base : new_message.current.value
-        props.update_textarea(text)
+        props.dispatch({type: "UPDATE-TEXTAREA",text: text})
     }
 
 
