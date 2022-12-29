@@ -13,6 +13,7 @@ const Messages = (props) => {
             </div>
             <div className={classes.dialog}>
                 <Dialog users={props.users}
+                        dialogs={props.dialogs}
                         placeholder={props.placeholder}
                         dispatch={props.dispatch}
                 />

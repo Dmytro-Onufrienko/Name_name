@@ -9,7 +9,7 @@
     border: 3px solid magenta;
     border-radius: 88px;
     width: 81px;
-    max-height: 77vh;
+    max-height: 486px;
 }
 
 .dialog {
@@ -17,4 +17,10 @@
     border: 3px solid magenta;
     border-radius: 50px;
     padding: 20px 15px;
+    max-height: 475px;
+    overflow-y: scroll;
+}
+
+.dialog::-webkit-scrollbar {
+    display: none;
 }

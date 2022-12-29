@@ -1,12 +1,13 @@
 import classes from "./Comments.module.css";
 import React from "react";
+import {addCommentActionCreator, updateTextareaActionCreator} from "../../../../../redux/state";
 
 const Add_comment = (props) => {
     let current_user = props.dispatch({type: "CURRENT-USER"})
     let new_post = React.createRef();
 
 
-    let add_post = () => {
+    let add_comment = () => {
         let text = new_post.current.value
         let comment_data = {
             "discussion_id": props.discussion_theme[0].id,
@@ -14,7 +15,8 @@ const Add_comment = (props) => {
             "creator_name": props.discussion_theme[0].creator_name,
             "text": text,
         };
-        props.dispatch({type: "ADD-COMMENT", obj: comment_data})
+        let action = addCommentActionCreator(comment_data)
+        props.dispatch(action)
         console.log(props.placeholder)
         textarea_change('Type here...')
     };
@@ -22,7 +24,8 @@ const Add_comment = (props) => {
 
     let textarea_change = (base) => {
         let text = base ? base : new_post.current.value
-        props.dispatch({type: "UPDATE-TEXTAREA", text: text})
+        let action = updateTextareaActionCreator(text)
+        props.dispatch(action)
     }
 
 
@@ -35,7 +38,7 @@ const Add_comment = (props) => {
             <img className={classes.user_ava}
                  src={current_user.img}
                  alt="avatar"/>
-            <button onClick={() => add_post()}
+            <button onClick={() => add_comment()}
                     className={classes.button}>
                 Post
             </button>

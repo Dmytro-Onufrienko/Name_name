@@ -1,0 +1,43 @@
+.post_div {
+    display: grid;
+    grid-template-areas: "ava text";
+    grid-template-columns: 1fr 9fr;
+    margin: 10px;
+    max-height: 150px;
+}
+
+.line {
+    grid-area: text;
+    align-self: end;
+    justify-self: start;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 15px;
+    max-height: 150px;
+    min-width: 150px;
+    max-width: 575px;
+    margin: 15px 0 5px 15px;
+    padding: 5px 20px;
+    background-color: magenta;
+}
+
+.current_user_ava {
+    grid-area: current_ava;
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    border: 1px solid magenta;
+    border-radius: 100px;
+    justify-self: end;
+}
+
+
+.user_ava {
+    grid-area: ava;
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    border: 1px solid magenta;
+    border-radius: 100px;
+    justify-self: end;
+}

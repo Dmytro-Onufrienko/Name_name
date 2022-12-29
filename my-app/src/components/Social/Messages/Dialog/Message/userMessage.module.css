@@ -1,43 +1,41 @@
-.add_message {
+.post_div {
     display: grid;
-    grid-template-areas: "text ava" "text button";
-    grid-template-columns: 10fr 1fr;
-    padding: 10px;
+    grid-template-areas:"text ava";
+    grid-template-columns: 9fr 1fr;
     margin: 10px;
 }
 
-.text_area {
-    resize: none;
+.line {
     grid-area: text;
+    align-self: end;
     justify-self: end;
-    padding: 10px 20px;
-    margin: 0 15px 5px 15px;
+    text-align: center;
     border: 1px solid;
     border-radius: 15px;
-    width: 460px;
-    height: 70px;
+    height: auto;
+    min-width: 150px;
+    max-width: 575px;
+    margin: 15px 15px 5px 15px;
+    padding: 5px 20px;
     background-color: magenta;
 }
 
-.button {
-    grid-area: button;
+.current_user_ava {
+    grid-area: current_ava;
     width: 70px;
+    height: 70px;
     margin: 0;
-    border: 1px solid;
+    border: 1px solid magenta;
     border-radius: 100px;
-    background-color: magenta;
     justify-self: end;
 }
 
-.button:hover {
-
-}
 
 .user_ava {
     grid-area: ava;
     width: 70px;
     height: 70px;
-    margin: 0 0 0 10px;
+    margin: 0;
     border: 1px solid magenta;
     border-radius: 100px;
     justify-self: end;

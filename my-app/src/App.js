@@ -18,6 +18,7 @@ const App = (props) => {
                     <Routes>
                         <Route path={'/messages'}
                                element={<Messages users={props.state.users}
+                                                  dialogs={props.state.dialogs}
                                                   dispatch={props.dispatch}
                                                   placeholder={props.state.placeholder}
                                />}
