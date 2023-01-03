@@ -113,14 +113,6 @@ export let updateTextareaActionCreator = (text) => {
     return {type: UPDATE_TEXTAREA, text: text}
 }
 
-export let addCommentActionCreator = (comment_data) => {
-    return {type: ADD_COMMENT, obj: comment_data}
-}
-
-export let sendMessageActionCreator = (message_data) => {
-    return {type: SEND_MESSAGE, message_data: message_data}
-}
-
 
 window.store = store
 export default store

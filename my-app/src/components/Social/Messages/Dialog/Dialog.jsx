@@ -1,7 +1,8 @@
 import classes from './Dialog.module.css'
 import React from "react";
-import {sendMessageActionCreator, updateTextareaActionCreator} from "../../../../redux/state";
+import {updateTextareaActionCreator} from "../../../../redux/store";
 import Message from "./Message/Message";
+import {sendMessageActionCreator} from "../../../../redux/Message_Reducer";
 
 const Dialog = (props) => {
     let current_user = props.currant_user()

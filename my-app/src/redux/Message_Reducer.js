@@ -1,3 +1,5 @@
+const SEND_MESSAGE = "SEND-MESSAGE";
+
 const message_reducer = (state, action) => {
     switch (action.type) {
         case "UPDATE-TEXTAREA":
@@ -15,8 +17,12 @@ const message_reducer = (state, action) => {
         default:
             return state
     }
-
-
 }
+
+
+export let sendMessageActionCreator = (message_data) => {
+    return {type: SEND_MESSAGE, message_data: message_data}
+}
+
 
 export default message_reducer

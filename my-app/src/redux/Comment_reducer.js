@@ -1,3 +1,5 @@
+const ADD_COMMENT = "ADD-COMMENT";
+
 const comment_reducer = (state, action) => {
     switch (action.type) {
         case "ADD-COMMENT":
@@ -17,7 +19,11 @@ const comment_reducer = (state, action) => {
         default:
             return state
     }
+}
 
+
+export let addCommentActionCreator = (comment_data) => {
+    return {type: ADD_COMMENT, obj: comment_data}
 }
 
 export default comment_reducer
