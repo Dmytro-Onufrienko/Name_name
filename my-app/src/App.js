@@ -21,6 +21,7 @@ const App = (props) => {
                                                   dialogs={props.state.dialogs}
                                                   dispatch={props.dispatch}
                                                   placeholder={props.state.placeholder}
+                                                  current_user={props.getCurrentUser}
                                />}
                         />
                         <Route path={'/discussions'}
@@ -29,6 +30,7 @@ const App = (props) => {
                                    comments_data={props.state.comments_data}
                                    placeholder={props.state.placeholder}
                                    dispatch={props.dispatch}
+                                   current_user={props.getCurrentUser}
                                />}
                         />
                         <Route path={'/anime'}

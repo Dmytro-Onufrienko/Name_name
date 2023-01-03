@@ -8,6 +8,7 @@ const Discussion = (props) => {
                 comments_data={props.comments_data}
                 placeholder={props.placeholder}
                 dispatch={props.dispatch}
+                current_user={props.current_user}
             />
         </div>
     )

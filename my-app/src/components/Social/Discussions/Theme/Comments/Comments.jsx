@@ -13,6 +13,7 @@ const Comments = (props) => {
                 discussion_theme={props.discussion_theme}
                 placeholder={props.placeholder}
                 dispatch={props.dispatch}
+                current_user={props.current_user}
             />
             <div>
                 {comments}

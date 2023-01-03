@@ -4,7 +4,7 @@ import {sendMessageActionCreator, updateTextareaActionCreator} from "../../../..
 import Message from "./Message/Message";
 
 const Dialog = (props) => {
-    let current_user = props.dispatch({type: "CURRENT-USER"})
+    let current_user = props.currant_user()
     let new_message = React.createRef();
     // console.log(props.dialogs[0].messages[0].user_id)
     // console.log(current_user.id)

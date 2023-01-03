@@ -16,6 +16,7 @@ const Messages = (props) => {
                         dialogs={props.dialogs}
                         placeholder={props.placeholder}
                         dispatch={props.dispatch}
+                        currant_user={props.current_user}
                 />
 
             </div>

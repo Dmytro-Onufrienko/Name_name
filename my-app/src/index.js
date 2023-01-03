@@ -14,6 +14,7 @@ let render_entire_tree = (state) => {
             <App
                 state={state}
                 dispatch={store.dispatch.bind(store)}
+                getCurrentUser={store.getCurrentUser.bind(store)}
             />
         </BrowserRouter>
     );

@@ -3,7 +3,7 @@ import React from "react";
 import {addCommentActionCreator, updateTextareaActionCreator} from "../../../../../redux/state";
 
 const Add_comment = (props) => {
-    let current_user = props.dispatch({type: "CURRENT-USER"})
+    let current_user = props.current_user()
     let new_post = React.createRef();
 
 

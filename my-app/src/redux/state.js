@@ -1,3 +1,6 @@
+import message_reducer from "./Message_Reducer";
+import comment_reducer from "./Comment_reducer";
+
 const ADD_COMMENT = "ADD-COMMENT";
 const UPDATE_TEXTAREA = "UPDATE-TEXTAREA";
 const SEND_MESSAGE = "SEND-MESSAGE";
@@ -90,42 +93,19 @@ let store = {
     getState() {
         return this._state
     },
+    getCurrentUser() {
+        return this._state.users[4]
+    },
     _render_entire_tree() {
         console.log('State is changed')
     },
     subscriber(observer) {
         this._render_entire_tree = observer
     },
-
     dispatch(action) {
-        if (action.type === "ADD-COMMENT") {
-            const new_comment = {
-                "id": this.getState().comments_data.length + 1,
-                "discussions_id": action.obj.discussion_id,
-                "name": action.obj.creator_name,
-                "img": action.obj.user_ava,
-                "text": action.obj.text,
-
-            }
-            this._state.comments_data.push(new_comment)
-            this._render_entire_tree(this._state)
-        }
-        if (action.type === "UPDATE-TEXTAREA") {
-            this._state.placeholder = action.text
-            this._render_entire_tree(this._state)
-        }
-        if (action.type === "CURRENT-USER") {
-            return this._state.users[4]
-        }
-        if (action.type === "SEND-MESSAGE") {
-            const new_message = {
-                'id': this.getState().dialogs[0].messages.length + 1,
-                "img": action.message_data.img,
-                user_id: action.message_data.user_id,
-                text: action.message_data.text
-            }
-            this._state.dialogs[0].messages.push(new_message)
-        }
+        this._state = comment_reducer(this._state, action)
+        this._state = message_reducer(this._state, action)
+        this._render_entire_tree(this._state)
     },
 }
 
@@ -137,7 +117,7 @@ export let addCommentActionCreator = (comment_data) => {
     return {type: ADD_COMMENT, obj: comment_data}
 }
 
-export  let sendMessageActionCreator = (message_data) => {
+export let sendMessageActionCreator = (message_data) => {
     return {type: SEND_MESSAGE, message_data: message_data}
 }
 
