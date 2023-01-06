@@ -4,6 +4,7 @@ import Mess_Nav from "./Mess_Nav/Mess_Nav";
 
 
 const Messages = (props) => {
+    // console.log(props)
     let users_avatars = props.users
         .map(user => (<Mess_Nav img={user.img} name={user.name} id={user.id}/>))
     return (
@@ -16,7 +17,7 @@ const Messages = (props) => {
                         dialogs={props.dialogs}
                         placeholder={props.placeholder}
                         dispatch={props.dispatch}
-                        currant_user={props.current_user}
+                        current_user={props.current_user}
                 />
 
             </div>

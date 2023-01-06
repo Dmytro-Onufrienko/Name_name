@@ -1,10 +1,9 @@
 import classes from "./Comments.module.css";
 import React from "react";
-import {addCommentActionCreator} from "../../../../../redux/Comment_reducer";
-import {updateTextareaActionCreator} from "../../../../../redux/store";
+import {addCommentActionCreator, updateTextareaActionCreator} from "../../../../../redux/Comment_Reducer";
 
 const Add_comment = (props) => {
-    let current_user = props.current_user()
+    let current_user = props.current_user
     let new_post = React.createRef();
 
 

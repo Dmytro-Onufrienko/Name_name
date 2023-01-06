@@ -1,14 +1,14 @@
 import classes from './Dialog.module.css'
 import React from "react";
-import {updateTextareaActionCreator} from "../../../../redux/store";
 import Message from "./Message/Message";
-import {sendMessageActionCreator} from "../../../../redux/Message_Reducer";
+import {sendMessageActionCreator, updateTextareaActionCreator} from "../../../../redux/Message_Reducer";
 
 const Dialog = (props) => {
-    let current_user = props.currant_user()
+    let current_user = props.current_user
+    // let current_user = props.dispatch({type: 'GET-CURRENT-USER'})
     let new_message = React.createRef();
     // console.log(props.dialogs[0].messages[0].user_id)
-    // console.log(current_user.id)
+    // console.log(current_user)
     let messages = (props.dialogs[0].messages.slice(0).reverse())
         .map(message => (<Message img={message.img}
                                   text={message.text}
