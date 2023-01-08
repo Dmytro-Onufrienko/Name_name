@@ -1,14 +1,10 @@
 import classes from './Dialog.module.css'
 import React from "react";
 import Message from "./Message/Message";
-import {sendMessageActionCreator, updateTextareaActionCreator} from "../../../../redux/Message_Reducer";
 
 const Dialog = (props) => {
     let current_user = props.current_user
-    // let current_user = props.dispatch({type: 'GET-CURRENT-USER'})
     let new_message = React.createRef();
-    // console.log(props.dialogs[0].messages[0].user_id)
-    // console.log(current_user)
     let messages = (props.dialogs[0].messages.slice(0).reverse())
         .map(message => (<Message img={message.img}
                                   text={message.text}
@@ -18,21 +14,12 @@ const Dialog = (props) => {
 
     let send_message = () => {
         let text = new_message.current.value
-        let message_data = {
-            "img": current_user.img,
-            user_id: current_user.id,
-            text: text
-        }
-        let action = sendMessageActionCreator(message_data)
-        props.dispatch(action)
-        console.log(text)
-        textarea_change('Type here...')
+        props.sendMessage(text)
     };
 
     let textarea_change = (base) => {
         let text = base ? base : new_message.current.value
-        let action = updateTextareaActionCreator(text)
-        props.dispatch(action)
+        props.textareaChange(text)
     }
 
     return (

@@ -1,11 +1,10 @@
 import classes from './Messages.module.css'
-import Dialog from "./Dialog/Dialog";
+import Dialog_Container from "./Dialog/Dialog_Container";
 import Mess_Nav from "./Mess_Nav/Mess_Nav";
 
 
 const Messages = (props) => {
-    // console.log(props)
-    let users_avatars = props.users
+    let users_avatars = props.store.users
         .map(user => (<Mess_Nav img={user.img} name={user.name} id={user.id}/>))
     return (
         <div className={classes.parent}>
@@ -13,11 +12,8 @@ const Messages = (props) => {
                 {users_avatars}
             </div>
             <div className={classes.dialog}>
-                <Dialog users={props.users}
-                        dialogs={props.dialogs}
-                        placeholder={props.placeholder}
-                        dispatch={props.dispatch}
-                        current_user={props.current_user}
+                <Dialog_Container store={props.store}
+                                  dispatch={props.dispatch}
                 />
 
             </div>

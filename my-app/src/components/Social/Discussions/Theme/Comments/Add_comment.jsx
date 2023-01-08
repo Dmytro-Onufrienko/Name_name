@@ -1,6 +1,5 @@
 import classes from "./Comments.module.css";
 import React from "react";
-import {addCommentActionCreator, updateTextareaActionCreator} from "../../../../../redux/Comment_Reducer";
 
 const Add_comment = (props) => {
     let current_user = props.current_user
@@ -9,23 +8,13 @@ const Add_comment = (props) => {
 
     let add_comment = () => {
         let text = new_post.current.value
-        let comment_data = {
-            "discussion_id": props.discussion_theme[0].id,
-            "user_ava": props.discussion_theme[0].user_ava,
-            "creator_name": props.discussion_theme[0].creator_name,
-            "text": text,
-        };
-        let action = addCommentActionCreator(comment_data)
-        props.dispatch(action)
-        console.log(props.placeholder)
-        textarea_change('Type here...')
+        props.addComment(text)
     };
 
 
     let textarea_change = (base) => {
         let text = base ? base : new_post.current.value
-        let action = updateTextareaActionCreator(text)
-        props.dispatch(action)
+        props.textareaChange(text)
     }
 
 

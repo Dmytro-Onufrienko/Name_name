@@ -17,20 +17,13 @@ const App = (props) => {
                 <div className={'app-content-wrapper'}>
                     <Routes>
                         <Route path={'/messages'}
-                               element={<Messages users={props.state.MessagePage.users}
-                                                  dialogs={props.state.MessagePage.dialogs}
+                               element={<Messages store={props.state.MessagePage}
                                                   dispatch={props.dispatch}
-                                                  placeholder={props.state.MessagePage.placeholder}
-                                                  current_user={props.state.MessagePage.currentUser}
                                />}
                         />
                         <Route path={'/discussions'}
-                               element={<Discussion
-                                   discussion_theme={props.state.DiscussionPage.discussion_theme}
-                                   comments_data={props.state.DiscussionPage.comments_data}
-                                   placeholder={props.state.DiscussionPage.placeholder}
-                                   dispatch={props.dispatch}
-                                   current_user={props.state.DiscussionPage.currentUser}
+                               element={<Discussion store={props.state.DiscussionPage}
+                                                    dispatch={props.dispatch}
                                />}
                         />
                         <Route path={'/anime'}
