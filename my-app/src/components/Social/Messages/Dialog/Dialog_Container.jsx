@@ -1,34 +1,40 @@
 import React from "react";
 import {sendMessageActionCreator, updateTextareaActionCreator} from "../../../../redux/Message_Reducer";
 import Dialog from "./Dialog";
+import StoreContext from "../../../../StoreContext";
 
-const Dialog_Container = (props) => {
-    let current_user = props.store.currentUser
-
-
-    let send_message = (text) => {
-        let message_data = {
-            "img": current_user.img,
-            user_id: current_user.id,
-            text: text
-        }
-        let action = sendMessageActionCreator(message_data)
-        props.dispatch(action)
-        textarea_change('Type here...')
-    };
-
-    let textarea_change = (text) => {
-        let action = updateTextareaActionCreator(text)
-        props.dispatch(action)
-    }
-
+const Dialog_Container = () => {
     return (
-        <Dialog textareaChange={textarea_change} sendMessage={send_message}
-                users={props.store.users}
-                dialogs={props.store.dialogs}
-                placeholder={props.store.placeholder}
-                current_user={props.store.currentUser}
-        />
+        <StoreContext.Consumer>
+            {
+                (store) => {
+                    let current_user = store.getState().MessagePage.currentUser
+                    let send_message = (text) => {
+                        let message_data = {
+                            "img": current_user.img,
+                            user_id: current_user.id,
+                            text: text
+                        }
+                        let action = sendMessageActionCreator(message_data)
+                        store.dispatch(action)
+                        textarea_change('Type here...')
+                    };
+
+                    let textarea_change = (text) => {
+                        let action = updateTextareaActionCreator(text)
+                        store.dispatch(action)
+                    }
+
+
+                    return <Dialog textareaChange={textarea_change} sendMessage={send_message}
+                                   users={store.getState().MessagePage.users}
+                                   dialogs={store.getState().MessagePage.dialogs}
+                                   placeholder={store.getState().MessagePage.placeholder}
+                                   current_user={store.getState().MessagePage.currentUser}
+                    />
+                }
+            }
+        </StoreContext.Consumer>
     )
 }
 

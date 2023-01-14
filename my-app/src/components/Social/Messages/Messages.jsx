@@ -12,9 +12,7 @@ const Messages = (props) => {
                 {users_avatars}
             </div>
             <div className={classes.dialog}>
-                <Dialog_Container store={props.store}
-                                  dispatch={props.dispatch}
-                />
+                <Dialog_Container />
 
             </div>
         </div>
