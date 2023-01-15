@@ -8,7 +8,7 @@ let mapStateToProps = (state) => {
     return {
         users: state.MessagePage.users,
         dialogs: state.MessagePage.dialogs,
-        placeholder: state.MessagePage.placeholder,
+        placeholder: state.MessagePage.message_placeholder,
         current_user: state.MessagePage.currentUser
     }
 }

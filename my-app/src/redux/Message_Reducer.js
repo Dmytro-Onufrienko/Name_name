@@ -45,29 +45,34 @@ let initialState = {
             ],
         },
     ],
-    placeholder: 'Type here...',
+    message_placeholder: 'Type here...',
     currentUser: {id: 5, name: "Zen", "img": 'avatars/cyber_girl.jpg'}
 }
 
 
 const message_reducer = (global_state = initialState, action) => {
-    let state = JSON.parse(JSON.stringify(global_state))
+    let state;
     switch (action.type) {
         case "UPDATE-TEXTAREA":
-            state.placeholder = action.text
-            return state;
+            return {
+                ...global_state,
+                message_placeholder: action.text
+            }
         case "SEND-MESSAGE":
             const new_message = {
-                'id': state.dialogs[0].messages.length + 1,
-                "img": state.currentUser.img,
-                'user_id': state.currentUser.id,
+                'id': global_state.dialogs[0].messages.length + 1,
+                "img": global_state.currentUser.img,
+                'user_id': global_state.currentUser.id,
                 text: action.text
             }
-            state.dialogs[0].messages.push(new_message)
-            state.placeholder = 'Type here...'
+            state = {
+                ...global_state,
+                message_placeholder: 'Type here...'
+            }
+            state.dialogs[0].messages = [...global_state.dialogs[0].messages, new_message]
             return state;
         default:
-            return state
+            return global_state
     }
 }
 

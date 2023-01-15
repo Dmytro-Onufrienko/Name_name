@@ -48,30 +48,33 @@ let initialState = {
             "text": 'Episode 11 is out now!!!!! im so exited! Wanna watch it now!!'
         },
     ],
-    placeholder: 'Type here...',
+    comment_placeholder: 'Type here...',
     currentUser: {id: 5, name: "Zen", "img": 'avatars/cyber_girl.jpg'}
 }
 
 
 const comment_reducer = (global_state = initialState, action) => {
-    let state = JSON.parse(JSON.stringify(global_state))
     switch (action.type) {
         case "ADD-COMMENT":
             const new_comment = {
-                "id": state.comments_data.length + 1,
-                "discussions_id": state.discussion_theme[0].id,
-                "name": state.currentUser.name,
-                "img": state .currentUser.img,
+                "id": global_state.comments_data.length + 1,
+                "discussions_id": global_state.discussion_theme[0].id,
+                "name": global_state.currentUser.name,
+                "img": global_state.currentUser.img,
                 "text": action.text,
             }
-            state.comments_data.push(new_comment)
-            state.placeholder = 'Type here...'
-            return state
+            return {
+                ...global_state,
+                comments_data: [...global_state.comments_data, new_comment],
+                comment_placeholder: 'Type here...'
+            }
         case "UPDATE-TEXTAREA":
-            state.placeholder = action.text
-            return state;
+            return {
+                ...global_state,
+                comment_placeholder: action.text
+            }
         default:
-            return state
+            return global_state
     }
 }
 

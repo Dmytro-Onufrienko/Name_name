@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        placeholder: state.DiscussionPage.placeholder,
+        placeholder: state.DiscussionPage.comment_placeholder,
         current_user: state.DiscussionPage.currentUser
     }
 }

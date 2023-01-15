@@ -8,6 +8,7 @@ const Dialog = (props) => {
     let messages = (props.dialogs[0].messages.slice(0).reverse())
         .map(message => (<Message img={message.img}
                                   text={message.text}
+                                  key={message.id}
                                   user_id={message.user_id}
                                   current_user_id={current_user.id}/>))
 
