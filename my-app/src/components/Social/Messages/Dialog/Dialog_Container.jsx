@@ -1,41 +1,29 @@
 import React from "react";
 import {sendMessageActionCreator, updateTextareaActionCreator} from "../../../../redux/Message_Reducer";
 import Dialog from "./Dialog";
-import StoreContext from "../../../../StoreContext";
-
-const Dialog_Container = () => {
-    return (
-        <StoreContext.Consumer>
-            {
-                (store) => {
-                    let current_user = store.getState().MessagePage.currentUser
-                    let send_message = (text) => {
-                        let message_data = {
-                            "img": current_user.img,
-                            user_id: current_user.id,
-                            text: text
-                        }
-                        let action = sendMessageActionCreator(message_data)
-                        store.dispatch(action)
-                        textarea_change('Type here...')
-                    };
-
-                    let textarea_change = (text) => {
-                        let action = updateTextareaActionCreator(text)
-                        store.dispatch(action)
-                    }
+import {connect} from "react-redux";
 
 
-                    return <Dialog textareaChange={textarea_change} sendMessage={send_message}
-                                   users={store.getState().MessagePage.users}
-                                   dialogs={store.getState().MessagePage.dialogs}
-                                   placeholder={store.getState().MessagePage.placeholder}
-                                   current_user={store.getState().MessagePage.currentUser}
-                    />
-                }
-            }
-        </StoreContext.Consumer>
-    )
+let mapStateToProps = (state) => {
+    return {
+        users: state.MessagePage.users,
+        dialogs: state.MessagePage.dialogs,
+        placeholder: state.MessagePage.placeholder,
+        current_user: state.MessagePage.currentUser
+    }
+}
+let mapDispatchToProps = (dispatch) => {
+    return {
+        textarea_change: (text) => {
+            dispatch(updateTextareaActionCreator(text))
+        },
+        send_message: (text) => {
+            dispatch(sendMessageActionCreator(text))
+        },
+    }
 }
 
-export default Dialog_Container
+
+const Dialog_container = connect(mapStateToProps, mapDispatchToProps)(Dialog);
+
+export default Dialog_container

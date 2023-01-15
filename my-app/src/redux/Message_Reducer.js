@@ -50,7 +50,8 @@ let initialState = {
 }
 
 
-const message_reducer = (state = initialState, action) => {
+const message_reducer = (global_state = initialState, action) => {
+    let state = JSON.parse(JSON.stringify(global_state))
     switch (action.type) {
         case "UPDATE-TEXTAREA":
             state.placeholder = action.text
@@ -58,23 +59,25 @@ const message_reducer = (state = initialState, action) => {
         case "SEND-MESSAGE":
             const new_message = {
                 'id': state.dialogs[0].messages.length + 1,
-                "img": action.message_data.img,
-                user_id: action.message_data.user_id,
-                text: action.message_data.text
+                "img": state.currentUser.img,
+                'user_id': state.currentUser.id,
+                text: action.text
             }
             state.dialogs[0].messages.push(new_message)
+            state.placeholder = 'Type here...'
             return state;
         default:
             return state
     }
 }
 
-
-export let sendMessageActionCreator = (message_data) => {
-    return {type: SEND_MESSAGE, message_data: message_data}
+export let sendMessageActionCreator = (text) => {
+    return {type: SEND_MESSAGE, text: text}
 }
 export let updateTextareaActionCreator = (text) => {
     return {type: UPDATE_TEXTAREA, text: text}
 }
+
+
 
 export default message_reducer

@@ -1,12 +1,10 @@
-import Theme from "./Theme/Theme";
+import Theme_Container from "./Theme/Theme_Container";
+import classes from "./Discussion.module.css"
 
-const Discussion = (props) => {
+const Discussion = () => {
     return (
-        <div>
-            <Theme
-                store={props.store}
-                dispatch={props.dispatch}
-            />
+        <div className={classes.parent}>
+            <Theme_Container/>
         </div>
     )
 }

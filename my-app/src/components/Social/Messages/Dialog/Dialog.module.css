@@ -29,10 +29,6 @@
     justify-self: end;
 }
 
-.button:hover {
-
-}
-
 .user_ava {
     grid-area: ava;
     width: 70px;

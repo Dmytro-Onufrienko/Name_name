@@ -1,5 +1,5 @@
 import classes from './Theme.module.css'
-import Comments from "./Comments/Comments";
+import Comments_Container from "./Comments/Comments_Container";
 
 
 const Theme = (props) => {
@@ -8,16 +8,13 @@ const Theme = (props) => {
             <p className={classes.line}>Discussion theme</p>
             <div className={classes.discussion_theme}>
                 <div className={classes.content_item}>
-                    <img src={props.store.discussion_theme[0].user_ava} className={classes.ava} alt={'avatar'}/>
+                    <img src={props.discussion_theme[0].user_ava} className={classes.ava} alt={'avatar'}/>
                 </div>
                 <div className={classes.content_item}>
-                    <p className={classes.line}>{props.store.discussion_theme[0].text}</p>
+                    <p className={classes.line}>{props.discussion_theme[0].text}</p>
                 </div>
             </div>
-            <Comments
-                store={props.store}
-                dispatch={props.dispatch}
-            />
+            <Comments_Container/>
         </div>
     )
 }

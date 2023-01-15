@@ -4,7 +4,7 @@ import Mess_Nav from "./Mess_Nav/Mess_Nav";
 
 
 const Messages = (props) => {
-    let users_avatars = props.store.users
+    let users_avatars = props.users
         .map(user => (<Mess_Nav img={user.img} name={user.name} id={user.id}/>))
     return (
         <div className={classes.parent}>
@@ -12,8 +12,7 @@ const Messages = (props) => {
                 {users_avatars}
             </div>
             <div className={classes.dialog}>
-                <Dialog_Container />
-
+                <Dialog_Container/>
             </div>
         </div>
     )

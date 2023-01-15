@@ -14,12 +14,12 @@ const Dialog = (props) => {
 
     let send_message = () => {
         let text = new_message.current.value
-        props.sendMessage(text)
+        props.send_message(text)
     };
 
     let textarea_change = (base) => {
         let text = base ? base : new_message.current.value
-        props.textareaChange(text)
+        props.textarea_change(text)
     }
 
     return (

@@ -1,7 +1,7 @@
-import classes from "./Comments.module.css";
+import classes from "../Comments.module.css";
 import React from "react";
 
-const Add_comment = (props) => {
+const Add_Comment = (props) => {
     let current_user = props.current_user
     let new_post = React.createRef();
 
@@ -35,4 +35,4 @@ const Add_comment = (props) => {
     )
 }
 
-export default Add_comment
+export default Add_Comment
