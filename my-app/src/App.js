@@ -2,11 +2,12 @@ import './App.css';
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Discussion from "./components/Social/Discussions/Discussion";
-import {Route, Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import React from "react";
 import Anime from "./components/Anime/Anime";
 import Music from "./components/Music/Music";
 import Messages_Container from "./components/Social/Messages/Messages_Container";
+import Users_Container from "./components/Social/Users/Users_Container";
 
 const App = () => {
     return (
@@ -27,6 +28,9 @@ const App = () => {
                         />
                         <Route path={'/music'}
                                element={<Music/>}
+                        />
+                        <Route path={'/users'}
+                               element={<Users_Container/>}
                         />
                     </Routes>
                 </div>

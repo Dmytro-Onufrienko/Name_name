@@ -2,7 +2,7 @@ import message_reducer from "./Message_Reducer";
 import comment_Reducer from "./Comment_Reducer";
 
 
-let store = {
+let oldStore = {
     _state: {
         DiscussionPage: {
             users: [
@@ -117,5 +117,5 @@ let store = {
 }
 
 
-window.store = store
-export default store
+window.store = oldStore
+export default oldStore

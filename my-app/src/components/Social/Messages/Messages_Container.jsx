@@ -1,4 +1,4 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Messages from "./Messages";
 
 let mapStateToProps = (state) => {

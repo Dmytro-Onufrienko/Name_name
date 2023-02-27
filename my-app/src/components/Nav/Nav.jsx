@@ -12,14 +12,20 @@ const Nav = () => {
             </div>
             <div className={classes.item}>
                 <NavLink to={'/messages'}
-                 className={(link_line) => link_line.isActive ? classes.active : classes.link_line}>
+                         className={(link_line) => link_line.isActive ? classes.active : classes.link_line}>
                     Messages
                 </NavLink>
             </div>
             <div className={classes.item}>
                 <NavLink to={"/discussions"}
-                 className={(link_line) => link_line.isActive ? classes.active : classes.link_line}>
+                         className={(link_line) => link_line.isActive ? classes.active : classes.link_line}>
                     Discussions
+                </NavLink>
+            </div>
+            <div className={classes.item}>
+                <NavLink to={"/users"}
+                         className={(link_line) => link_line.isActive ? classes.active : classes.link_line}>
+                    Users
                 </NavLink>
             </div>
         </nav>
