@@ -1,7 +1,3 @@
-const SEND_MESSAGE = "SEND-MESSAGE";
-const UPDATE_TEXTAREA = "UPDATE-TEXTAREA";
-
-
 let initialState = {
     users: [
         {id: 1, name: "sadboy", "img": 'avatars/sadboy_avatar.png'},
@@ -17,36 +13,17 @@ let initialState = {
 const users_reducer = (global_state = initialState, action) => {
     let state;
     switch (action.type) {
-        case "UPDATE-TEXTAREA":
-            return {
-                ...global_state,
-                message_placeholder: action.text
-            }
-        case "SEND-MESSAGE":
-            const new_message = {
-                'id': global_state.dialogs[0].messages.length + 1,
-                "img": global_state.currentUser.img,
-                'user_id': global_state.currentUser.id,
-                text: action.text
-            }
-            state = {
-                ...global_state,
-                message_placeholder: 'Type here...'
-            }
-            state.dialogs[0].messages = [...global_state.dialogs[0].messages, new_message]
-            return state;
+        case 'SET-USERS': {
+            return {...state, users: [...state.users, ...action.users]}
+        }
         default:
             return global_state
     }
 }
 
-export let sendMessageActionCreator = (text) => {
-    return {type: SEND_MESSAGE, text: text}
+export let setUsersActionCreator = (users) => {
+    return {type: 'SET-USERS', users}
 }
-export let updateTextareaActionCreator = (text) => {
-    return {type: UPDATE_TEXTAREA, text: text}
-}
-
 
 
 export default users_reducer

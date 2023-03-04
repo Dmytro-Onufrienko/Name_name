@@ -1,4 +1,5 @@
 import Users_avatars from "./Users_avatars/Users_avatars";
+import classes from "./Users.module.css";
 
 const Users = (props) => {
     let users_avatars = props.users
@@ -6,8 +7,7 @@ const Users = (props) => {
 
     return (
         <div>
-            users
-            <div>
+            <div className={classes.users_list}>
                 {users_avatars}
             </div>
         </div>

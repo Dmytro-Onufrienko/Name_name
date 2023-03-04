@@ -1,12 +1,12 @@
 import {NavLink} from "react-router-dom";
-import classes from "./Users_avatars.module.css";
+import classes from "../Users.module.css";
 
 const Users_avatars = (props) => {
     return (
-        <div className={classes.user_card}>
+        <div>
             <NavLink to={`/messages/${props.name}`}>
                 <img className={classes.user_ava} src={`${props.img}`} alt="ava"/>
-                <p>{props.name}</p>
+                <p className={classes.user_name}>{props.name}</p>
             </NavLink>
         </div>
     )
